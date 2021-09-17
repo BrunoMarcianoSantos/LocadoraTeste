@@ -8,7 +8,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import qts.locador.exception.JogoSemEstoqueException;
-import qts.locador.exception.ValorInvalidoException;
+import qts.locador.exception.JogoValorZeroException;
 import qts.locadora.service.LocacaoService;
 import qts.locadora.util.DataUtil;
 import qts.locadoraa.Cliente;
@@ -44,7 +44,7 @@ public class LocacaoTestService {
         locacao = locacaoService.alugarJogo(cliente, jogo);
     }
 
-    @Test(expected = ValorInvalidoException.class)
+    @Test(expected = JogoValorZeroException.class)
     public void testValorZero() throws Exception {
 
         Cliente cliente = new Cliente("Antônio");
